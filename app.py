@@ -2,9 +2,9 @@ import random
 import streamlit as st
 from logic_utils import get_range_for_difficulty, parse_guess, check_guess, update_score
 
-st.set_page_config(page_title="Glitchy Guesser", page_icon="🎮")
+st.set_page_config(page_title="Glitchy Guesser", page_icon="")
 
-st.title("🎮 Game Glitch Investigator")
+st.title(" Game Glitch Investigator")
 st.caption("An AI-generated guessing game. Something is off.")
 
 st.sidebar.header("Settings")
@@ -45,7 +45,7 @@ if "history" not in st.session_state:
 st.subheader("Make a guess")
 
 st.info(
-    f"Guess a number between 1 and 100. "
+    f"Guess a number between {low} and {high}. "
     f"Attempts left: {attempt_limit - st.session_state.attempts}"
 )
 
@@ -63,9 +63,9 @@ raw_guess = st.text_input(
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    submit = st.button("Submit Guess 🚀")
+    submit = st.button("Submit Guess ")
 with col2:
-    new_game = st.button("New Game 🔁")
+    new_game = st.button("New Game ")
 with col3:
     show_hint = st.checkbox("Show hint", value=True)
 
